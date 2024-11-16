@@ -5,9 +5,9 @@ class User {
 
   Map<String, dynamic> toJson() {
     return {
-      'name': this.name,
-      'age': this.age,
-      'height': this.height,
+      'name': name,
+      'age': age,
+      'height': height,
     };
   }
 }
