@@ -4,7 +4,7 @@ class User {
   double? height;
   int id;
 
-User({required this.id, required this.name, required this.age, required this.height });
+User({ required this.id, required this.name, required this.age, required this.height });
 
 Map<String, dynamic> toJson() {
     return {
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() {
     );
   }
 
-@override
+  @override
   String toString() {
     return 'User(id : $id, name: $name, age: $age, height: $height)';
   }
