@@ -2,7 +2,7 @@ class User {
   String? name;
   int? age;
   double? height;
-  int id;
+  int? id;
 
 User({required this.id, required this.name, required this.age, required this.height });
 
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() {
   }
 
   static User fromJson(Map<dynamic, dynamic> userJson) {
-    return new User(
+    return User(
       id: userJson['id'],
       name: userJson['name'],
       age: userJson['age'],
