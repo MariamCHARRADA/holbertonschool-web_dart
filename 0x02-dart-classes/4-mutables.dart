@@ -13,7 +13,9 @@ class Password{
     _password = newP;
   }
 
-  bool isValid(){    
+  bool isValid(){   
+    if (_password == null) return false;
+ 
     bool upperCase = _password!.contains(RegExp(r'[A-Z]'));
     bool lowerCase = _password!.contains(RegExp(r'[a-z]'));
     bool numbers = _password!.contains(RegExp(r'\d'));
