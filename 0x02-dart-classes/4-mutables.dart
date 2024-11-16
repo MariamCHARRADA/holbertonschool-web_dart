@@ -6,16 +6,14 @@ class Password{
   }
 
   // getter
-  String? get password => _password;
+  String get password => _password;
 
   // setter
-  set password(String? new) {
+  set password(String new) {
     _password = new;
   }
 
-  bool isValid(){
-    if (_password == null) return false;
-    
+  bool isValid(){    
     bool upperCase = _password!.contains(RegExp(r'[A-Z]'));
     bool lowerCase = _password!.contains(RegExp(r'[a-z]'));
     bool numbers = _password!.contains(RegExp(r'\d'));
