@@ -1,31 +1,31 @@
-class Password{
-  String? _password;
+class User {
+  int id;
+  String name;
+  int age;
+  double height;
 
-  Password({String? password}) {
-    _password = password;
+  User({
+    required this.id,
+    required this.name,
+    required this.age,
+    required this.height,
+  });
+
+  Map<String, dynamic> toJson() {
+    return {'id': id, 'name': name, 'age': age, 'height': height};
   }
 
-  // getter
-  String? get password => _password;
-
-  // setter
-  void set password(String? newP) {
-    _password = newP;
+  static User fromJson(Map<dynamic, dynamic> userJson) {
+    return User(
+      id: userJson['id'],
+      name: userJson['name'],
+      age: userJson['age'],
+      height: userJson['height'],
+    );
   }
 
-  bool isValid(){   
-    if (_password == null) return false;
- 
-    bool upperCase = _password!.contains(RegExp(r'[A-Z]'));
-    bool lowerCase = _password!.contains(RegExp(r'[a-z]'));
-    bool numbers = _password!.contains(RegExp(r'\d'));
-    bool length = _password!.length >= 8 && _password!.length <= 16;
-
-    return upperCase && lowerCase && numbers && length;
-
-  }
   @override
   String toString() {
-    return "Your Password is: $_password";
+    return 'User(id: $id, name: $name, age: $age, height: $height)';
   }
 }
