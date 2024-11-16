@@ -1,5 +1,8 @@
 class Password{
   String? _password;
+  Password({String? password}) {
+    _password = password;
+  }
 
   bool isValid(){
     bool upperCase = _password!.contains(RegExp(r'[A-Z]'));
