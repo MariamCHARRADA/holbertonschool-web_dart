@@ -9,7 +9,7 @@ class Password{
   String? get password => _password;
 
   // setter
-  void set password(String newP) {
+  void set password(String? newP) {
     _password = newP;
   }
 
