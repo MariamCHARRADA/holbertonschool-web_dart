@@ -1,5 +1,6 @@
 class User {
-  void showName(String name) {
+  String? name;
+  void showName() {
     print('Hello $name');
   }
 }
