@@ -3,7 +3,7 @@ class User {
   int? age;
   double? height;
 
-  Map toJson() {
+  Map<String, dynamic> toJson() {
     return {
       'name': this.name,
       'age': this.age,
