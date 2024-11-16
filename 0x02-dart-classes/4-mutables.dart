@@ -9,15 +9,15 @@ class Password{
   String? get password => _password;
 
   // setter
-  set password(String newP) {
+  void set password(String newP) {
     _password = newP;
   }
 
   bool isValid(){    
-    bool upperCase = _password.contains(RegExp(r'[A-Z]'));
-    bool lowerCase = _password.contains(RegExp(r'[a-z]'));
-    bool numbers = _password.contains(RegExp(r'\d'));
-    bool length = _password.length >= 8 && _password.length <= 16;
+    bool upperCase = _password!.contains(RegExp(r'[A-Z]'));
+    bool lowerCase = _password!.contains(RegExp(r'[a-z]'));
+    bool numbers = _password!.contains(RegExp(r'\d'));
+    bool length = _password!.length >= 8 && _password!.length <= 16;
 
     return upperCase && lowerCase && numbers && length;
 
