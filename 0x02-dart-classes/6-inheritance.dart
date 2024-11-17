@@ -27,7 +27,10 @@ class User extends Password {
       user_password: userJson['user_password'],
     );
   }
-
+  
+ set user_password(String value) {
+    super.password = value;
+  }
 
   @override
   String toString() {
