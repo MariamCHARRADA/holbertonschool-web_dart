@@ -28,10 +28,7 @@ class User extends Password {
     );
   }
 
-  set user_password(String value) {
-      password = value;
-      super.password = value;
-    }
+
   @override
   String toString() {
     return 'User(id : $id ,name: $name, age: $age, height: $height)';
