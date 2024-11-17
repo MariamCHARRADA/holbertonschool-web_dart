@@ -20,16 +20,17 @@ Map<String, dynamic> toJson() {
     };
   }
 
-static User fromJson(Map<dynamic, dynamic> userJson) {
-  return User(
-    id: userJson['id'],
-    name: userJson['name'],
-    age: userJson['age'],
-    height: userJson['height']
-  );
-}
+  static User fromJson(Map<dynamic, dynamic> userJson) {
+    return User(
+      id: userJson['id'],
+      name: userJson['name'],
+      age: userJson['age'],
+      height: userJson['height']
+    );
+  }
 
-String toString() {
-  return 'User(id : $id, name: $name,  age: $age, height: $height)';
+  @override
+  String toString() {
+    return 'User(id : $id, name: $name, age: $age, height: $height)';
   }
 }
