@@ -5,18 +5,17 @@ class User extends Password {
   String name;
   int age;
   double height;
+  String user_password;
 
-  User({required this.id, required this.name, required this.age, required this.height, required this.user_password}) : super(password: user_password) {
-    isValid();
+  User({
+    required this.id,
+    required this.name,
+    required this.age,
+    required this.height,
+    required this.user_password,
+  }) : super(password: user_password) {
+    isValid(); // Call isValid after initializing password
   }
-
-
-  set user_password(String value) {
-    password = value;
-    super.password = value;
-    isValid();
-  }
-  
 
   Map<String, dynamic> toJson() {
     return {
@@ -36,8 +35,12 @@ class User extends Password {
       user_password: userJson['user_password'],
     );
   }
-  
 
+  set user_password(String value) {
+    password = value;
+    super.password = value;
+    isValid(); // Call isValid when password is updated
+  }
 
   @override
   String toString() {
