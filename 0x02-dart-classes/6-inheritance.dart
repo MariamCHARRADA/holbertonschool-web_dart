@@ -12,9 +12,9 @@ class User extends Password {
     required this.name,
     required this.age,
     required this.height,
-    required this.user_password,
+    String? user_password,
   }) : super(password: user_password) {
-    isValid(); // Call isValid after initializing password
+    isValid();
   }
 
   Map<String, dynamic> toJson() {
@@ -36,10 +36,11 @@ class User extends Password {
     );
   }
 
-  set user_password(String value) {
+  String? get user_password => password;
+
+  set user_password(String? value) {
     password = value;
-    super.password = value;
-    isValid(); // Call isValid when password is updated
+    isValid();
   }
 
   @override
