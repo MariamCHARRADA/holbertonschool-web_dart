@@ -7,7 +7,13 @@ class User extends Password {
   double height;
   String user_password;
 
-  User({required this.id, required this.name, required this.age, required this.height, required this.user_password}) : super(password: user_password);
+  User({
+    required this.id,
+    required this.name,
+    required this.age,
+    required this.height,
+    required this.user_password,
+  }) : super(password: user_password);
 
   Map<String, dynamic> toJson() {
     return {
@@ -27,13 +33,14 @@ class User extends Password {
       user_password: userJson['user_password'],
     );
   }
-  
- set user_password(String value) {
+
+  set user_password(String value) {
+    password = value;
     super.password = value;
   }
 
   @override
   String toString() {
-    return 'User(id : $id ,name: $name, age: $age, height: $height)';
+    return 'User(id : $id ,name: $name, age: $age, height: $height, ${super.toString()})';
   }
 }
