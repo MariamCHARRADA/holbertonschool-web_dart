@@ -24,6 +24,11 @@ class Password{
     return upperCase && lowerCase && numbers && length;
 
   }
+  
+  set user_password(String value) {
+    password = value;
+    super.password = value;
+  }
   @override
   String toString() {
     return "Your Password is: $_password";
