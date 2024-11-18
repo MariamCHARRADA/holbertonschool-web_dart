@@ -10,7 +10,7 @@ Future<String> greetUser() async{
     return 'Hello $userName';
 
   } catch (error) {
-    print('error caught: $error');
+    return 'error caught: $error';
   }
 }
 
@@ -20,8 +20,8 @@ Future<String> loginUser() async {
 
     if ( credentials === true ) {
       print('There is a user: true');
-      greetUser();
-    } else if ( credentials === false ) {
+      return await greetUser();
+    } else {
       print('There is a user: false');
       return 'Wrong credentials';
     }
