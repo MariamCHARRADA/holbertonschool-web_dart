@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 Future<void> printRmCharacters() async {
-  const String apiUrl = 'https://rickandmortyapi.com/api/character';
+  const String apiUrl = 'https://rickandmortyapi.com/';
   try {
     var response = await http.get(Uri.parse(apiUrl));
 
-    Map<String, dynamic> jsonData = jsonDecode(response.body);
+    Map jsonData = jsonDecode(response.body);
 
     List characters = jsonData['results'];
     for (var character in characters) {
