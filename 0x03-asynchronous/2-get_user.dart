@@ -6,7 +6,7 @@ Future<void> getUser() async {
 
     print(user);
   } catch(error) {
-    throw 'error caught: $error';
+    print('error caught: $error');
   }
 
 }
