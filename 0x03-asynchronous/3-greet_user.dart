@@ -16,7 +16,7 @@ Future<String> greetUser() async{
 
 Future<String> loginUser() async {
   try {
-    bool credentials = checkCredentials();
+    bool credentials = await checkCredentials();
 
     if ( credentials === true ) {
       print('There is a user: true');
